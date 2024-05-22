@@ -39,8 +39,8 @@ def leer_archivo(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
 
-def guardar_archivo(file_path, contenido):
-    with open(file_path, 'w', encoding='utf-8') as file:
+def guardar_archivo(contenido):
+    with open("cifrado.txt", 'w', encoding='utf-8') as file:
         file.write(contenido)
 
 if __name__ == "__main__":
@@ -64,9 +64,8 @@ if __name__ == "__main__":
     # Guardar o mostrar el resultado
     opcion_salida = input("¿Desea guardar el texto cifrado en un archivo o mostrar en pantalla? (1/2): ").strip().lower()
     if opcion_salida == '1':
-        file_path_salida = input("Ingrese la ruta del archivo para guardar el texto cifrado: ").strip()
-        guardar_archivo(file_path_salida, texto_cifrado)
-        print(f"Texto cifrado guardado en {file_path_salida}")
+        guardar_archivo( texto_cifrado)
+        print(f"Texto cifrado guardado en cifrado.txt")
     else:
         print("Texto cifrado:")
         print(texto_cifrado)
